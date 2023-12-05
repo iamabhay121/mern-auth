@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import GoogleOAuth from "../components/GoogleOAuth";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({});
@@ -43,7 +44,7 @@ const SignUp = () => {
 
   return (
     <div className="p-3 max-w-lg mx-auto">
-      <h1 className="text-3xl text-center font-semibold my-7">SignUp</h1>
+      <h1 className="text-3xl text-center font-semibold my-7">Sign-Up</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           type="text"
@@ -70,13 +71,14 @@ const SignUp = () => {
           disabled={loading}
           className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
         >
-          {loading ? "Loading...." : "Sign Up"}
+          {loading ? "Loading...." : "Sign-Up"}
         </button>
+        <GoogleOAuth />
       </form>
       <div className="flex gap-2 mt-5">
         <p>Have an account..?</p>
         <Link to="/signin">
-          <span className="text-blue-500">Sign In</span>
+          <span className="text-blue-500">Sign-In</span>
         </Link>
       </div>
       <span className="text-red-700 mt-5">
