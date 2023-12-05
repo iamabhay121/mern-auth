@@ -28,6 +28,7 @@ const Profile = () => {
   const [formData, setFormData] = useState({});
 
   const { currentUser, loading, error } = useSelector((state) => state.user);
+  const [updatesucess, setUpdateSuccess] = useState(false);
 
   useEffect(() => {
     if (image) {
@@ -179,7 +180,7 @@ const Profile = () => {
       </div>
       <p className="text-red-700 mt-5">{error && "Something went wrong!"}</p>
       <p className="text-green-700 mt-5">
-        {updateUserSuccess && "User is updated successfully!"}
+        {updatesucess && "User is updated successfully!"}
       </p>
     </div>
   );
